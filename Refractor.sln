@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Refractor.Console", "Refrac
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Refractor.UnitTestGenerator", "Refractor.UnitTestGenerator\Refractor.UnitTestGenerator.csproj", "{7FBB0036-81AA-4E27-BB18-8FFF711D4289}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Refractor.DemoProject", "Refractor.DemoProject\Refractor.DemoProject.csproj", "{4BE2FB6C-C505-4F88-B78A-D7E2E411C592}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Refractor.UnitTestGenerator.Tests", "Refractor.UnitTestGenerator.Tests\Refractor.UnitTestGenerator.Tests.csproj", "{49ED607E-FE7C-478C-817A-28DEA3091262}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{7FBB0036-81AA-4E27-BB18-8FFF711D4289}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7FBB0036-81AA-4E27-BB18-8FFF711D4289}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7FBB0036-81AA-4E27-BB18-8FFF711D4289}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BE2FB6C-C505-4F88-B78A-D7E2E411C592}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BE2FB6C-C505-4F88-B78A-D7E2E411C592}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BE2FB6C-C505-4F88-B78A-D7E2E411C592}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BE2FB6C-C505-4F88-B78A-D7E2E411C592}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49ED607E-FE7C-478C-817A-28DEA3091262}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49ED607E-FE7C-478C-817A-28DEA3091262}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49ED607E-FE7C-478C-817A-28DEA3091262}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49ED607E-FE7C-478C-817A-28DEA3091262}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

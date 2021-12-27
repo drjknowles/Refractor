@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <None Remove="Properties\" />
+    <None Remove="System.CodeDom" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
@@ -20,5 +21,8 @@
     <Compile Update="Properties\PropertyTestGenerator.cs">
       <DependentUpon>PropertyTestGenerator.tt</DependentUpon>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="System.CodeDom" Version="6.0.0" />
   </ItemGroup>
 </Project>

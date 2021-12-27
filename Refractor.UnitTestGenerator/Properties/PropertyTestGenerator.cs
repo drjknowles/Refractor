@@ -21,7 +21,19 @@ namespace Refractor.UnitTestGenerator.Properties {
             this.GenerationEnvironment = null;
             
             #line 6 ""
-            this.Write("\n");
+            this.Write("\nnamespace ");
+            
+            #line default
+            #line hidden
+            
+            #line 7 ""
+            this.Write(this.ToStringHelper.ToStringWithCulture(TestNamespace));
+            
+            #line default
+            #line hidden
+            
+            #line 7 ""
+            this.Write(" {\n\n}");
             
             #line default
             #line hidden

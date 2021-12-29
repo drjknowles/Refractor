@@ -6,4 +6,48 @@
 
 namespace <#=TestNamespace#> {
 
-}
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    
+    [TestClass]
+    public partial class <#=ClassName#> {
+    
+    private <#=ClassNameUnderTest#> classUnderTest;
+
+    [TestInitialize]
+    public void TestInitialize() {
+    
+        // Arrannge
+        classUnderTest = new <#=ClassNameUnderTest#>();
+    
+    }
+    
+    [TestCleanup]
+    public void TestCleanup() {
+    
+        // Clear up after tests
+        classUnderTest = default;
+    
+    }
+    
+    <# foreach(var propertyTestData in PropertyTestData) { 
+    
+        var propertyValue = GetTestValueForType(propertyTestData.PropertyType);
+    #>
+    
+    [TestMethod]
+    public void <#=ClassName#>_<#=propertyTestData.PropertyName#>_GetAndSet() {
+        
+        // Act
+        classUnderTest.<#=propertyTestData.PropertyName#> = <#=propertyValue#>;
+        
+        // Assert
+        Assert.AreEqual(<#=propertyValue#>, classUnderTest.<#=propertyTestData.PropertyName#>);
+    }
+    
+    <# 
+    } // End of foreach loop 
+    #>
+    
+    } // End of class <#=ClassName#>
+
+} // End of namespace <#=TestNamespace#>

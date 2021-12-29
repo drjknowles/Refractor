@@ -33,7 +33,172 @@ namespace Refractor.UnitTestGenerator.Properties {
             #line hidden
             
             #line 7 ""
-            this.Write(" {\n\n}");
+            this.Write(" {\n\n    using Microsoft.VisualStudio.TestTools.UnitTesting;\n    \n    [TestClass]\n" +
+                    "    public partial class ");
+            
+            #line default
+            #line hidden
+            
+            #line 12 ""
+            this.Write(this.ToStringHelper.ToStringWithCulture(ClassName));
+            
+            #line default
+            #line hidden
+            
+            #line 12 ""
+            this.Write(" {\n    \n    private ");
+            
+            #line default
+            #line hidden
+            
+            #line 14 ""
+            this.Write(this.ToStringHelper.ToStringWithCulture(ClassNameUnderTest));
+            
+            #line default
+            #line hidden
+            
+            #line 14 ""
+            this.Write(" classUnderTest;\n\n    [TestInitialize]\n    public void TestInitialize() {\n    \n  " +
+                    "      // Arrannge\n        classUnderTest = new ");
+            
+            #line default
+            #line hidden
+            
+            #line 20 ""
+            this.Write(this.ToStringHelper.ToStringWithCulture(ClassNameUnderTest));
+            
+            #line default
+            #line hidden
+            
+            #line 20 ""
+            this.Write("();\n    \n    }\n    \n    [TestCleanup]\n    public void TestCleanup() {\n    \n      " +
+                    "  // Clear up after tests\n        classUnderTest = default;\n    \n    }\n    \n    " +
+                    "");
+            
+            #line default
+            #line hidden
+            
+            #line 32 ""
+ foreach(var propertyTestData in PropertyTestData) { 
+    
+        var propertyValue = GetTestValueForType(propertyTestData.PropertyType);
+    
+            
+            #line default
+            #line hidden
+            
+            #line 36 ""
+            this.Write("    \n    [TestMethod]\n    public void ");
+            
+            #line default
+            #line hidden
+            
+            #line 38 ""
+            this.Write(this.ToStringHelper.ToStringWithCulture(ClassName));
+            
+            #line default
+            #line hidden
+            
+            #line 38 ""
+            this.Write("_");
+            
+            #line default
+            #line hidden
+            
+            #line 38 ""
+            this.Write(this.ToStringHelper.ToStringWithCulture(propertyTestData.PropertyName));
+            
+            #line default
+            #line hidden
+            
+            #line 38 ""
+            this.Write("_GetAndSet() {\n        \n        // Act\n        classUnderTest.");
+            
+            #line default
+            #line hidden
+            
+            #line 41 ""
+            this.Write(this.ToStringHelper.ToStringWithCulture(propertyTestData.PropertyName));
+            
+            #line default
+            #line hidden
+            
+            #line 41 ""
+            this.Write(" = ");
+            
+            #line default
+            #line hidden
+            
+            #line 41 ""
+            this.Write(this.ToStringHelper.ToStringWithCulture(propertyValue));
+            
+            #line default
+            #line hidden
+            
+            #line 41 ""
+            this.Write(";\n        \n        // Assert\n        Assert.AreEqual(");
+            
+            #line default
+            #line hidden
+            
+            #line 44 ""
+            this.Write(this.ToStringHelper.ToStringWithCulture(propertyValue));
+            
+            #line default
+            #line hidden
+            
+            #line 44 ""
+            this.Write(", classUnderTest.");
+            
+            #line default
+            #line hidden
+            
+            #line 44 ""
+            this.Write(this.ToStringHelper.ToStringWithCulture(propertyTestData.PropertyName));
+            
+            #line default
+            #line hidden
+            
+            #line 44 ""
+            this.Write(");\n    }\n    \n    ");
+            
+            #line default
+            #line hidden
+            
+            #line 47 ""
+ 
+    } // End of foreach loop 
+    
+            
+            #line default
+            #line hidden
+            
+            #line 50 ""
+            this.Write("    \n    } // End of class ");
+            
+            #line default
+            #line hidden
+            
+            #line 51 ""
+            this.Write(this.ToStringHelper.ToStringWithCulture(ClassName));
+            
+            #line default
+            #line hidden
+            
+            #line 51 ""
+            this.Write("\n\n} // End of namespace ");
+            
+            #line default
+            #line hidden
+            
+            #line 53 ""
+            this.Write(this.ToStringHelper.ToStringWithCulture(TestNamespace));
+            
+            #line default
+            #line hidden
+            
+            #line 53 ""
+            this.Write("\n");
             
             #line default
             #line hidden

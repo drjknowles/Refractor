@@ -14,10 +14,13 @@
 
         public string GeneratePropertyTests<T>(T target)
         {
-            foreach(var property in target.GetType().GetProperties())
-            {
-                Console.WriteLine($"{property.Name} of type {property.PropertyType}");
+            var targetType = target.GetType();
 
+            PropertyTestGenerator.ClassName = $"{targetType.Name}_PropertyGetterSetterTests";
+            PropertyTestGenerator.ClassNameUnderTest = targetType.Name;
+
+            foreach(var property in targetType.GetProperties())
+            { 
                 PropertyTestGenerator.PropertyTestData.Add(new TestData
                 {
                     PropertyName = property.Name,

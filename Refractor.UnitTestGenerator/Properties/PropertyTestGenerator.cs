@@ -21,20 +21,20 @@ namespace Refractor.UnitTestGenerator.Properties {
             this.GenerationEnvironment = null;
             
             #line 6 ""
-            this.Write("\nnamespace ");
+            this.Write("namespace ");
             
             #line default
             #line hidden
             
-            #line 7 ""
+            #line 6 ""
             this.Write(this.ToStringHelper.ToStringWithCulture(TestNamespace));
             
             #line default
             #line hidden
             
-            #line 7 ""
-            this.Write(" {\n\n    using Microsoft.VisualStudio.TestTools.UnitTesting;\n    \n    [TestClass]\n" +
-                    "    public partial class ");
+            #line 6 ""
+            this.Write(" {\n\n    using System;\n    using Microsoft.VisualStudio.TestTools.UnitTesting;\n\n  " +
+                    "  [TestClass]\n    public partial class ");
             
             #line default
             #line hidden
@@ -80,15 +80,50 @@ namespace Refractor.UnitTestGenerator.Properties {
             
             #line 32 ""
  foreach(var propertyTestData in PropertyTestData) { 
-    
-        var propertyValue = GetTestValueForType(propertyTestData.PropertyType);
-    
+    var propertyValues = GetTestValuesForType(propertyTestData.PropertyType);  
+    foreach(var propertyValue in propertyValues) { 
+            
+            #line default
+            #line hidden
+            
+            #line 35 ""
+            this.Write("    [DataRow(");
+            
+            #line default
+            #line hidden
+            
+            #line 35 ""
+            this.Write(this.ToStringHelper.ToStringWithCulture(propertyValue));
+            
+            #line default
+            #line hidden
+            
+            #line 35 ""
+            this.Write(", ");
+            
+            #line default
+            #line hidden
+            
+            #line 35 ""
+            this.Write(this.ToStringHelper.ToStringWithCulture(propertyValue));
+            
+            #line default
+            #line hidden
+            
+            #line 35 ""
+            this.Write(")]\n    ");
             
             #line default
             #line hidden
             
             #line 36 ""
-            this.Write("    \n    [TestMethod]\n    public void ");
+ } 
+            
+            #line default
+            #line hidden
+            
+            #line 37 ""
+            this.Write("    [DataTestMethod]\n    public void ");
             
             #line default
             #line hidden
@@ -112,7 +147,31 @@ namespace Refractor.UnitTestGenerator.Properties {
             #line hidden
             
             #line 38 ""
-            this.Write("_GetAndSet() {\n        \n        // Act\n        classUnderTest.");
+            this.Write("_GetAndSet(");
+            
+            #line default
+            #line hidden
+            
+            #line 38 ""
+            this.Write(this.ToStringHelper.ToStringWithCulture(propertyTestData.PropertyTypeName));
+            
+            #line default
+            #line hidden
+            
+            #line 38 ""
+            this.Write(" input, ");
+            
+            #line default
+            #line hidden
+            
+            #line 38 ""
+            this.Write(this.ToStringHelper.ToStringWithCulture(propertyTestData.PropertyTypeName));
+            
+            #line default
+            #line hidden
+            
+            #line 38 ""
+            this.Write(" expected) {\n        \n        // Act\n        classUnderTest.");
             
             #line default
             #line hidden
@@ -124,31 +183,8 @@ namespace Refractor.UnitTestGenerator.Properties {
             #line hidden
             
             #line 41 ""
-            this.Write(" = ");
-            
-            #line default
-            #line hidden
-            
-            #line 41 ""
-            this.Write(this.ToStringHelper.ToStringWithCulture(propertyValue));
-            
-            #line default
-            #line hidden
-            
-            #line 41 ""
-            this.Write(";\n        \n        // Assert\n        Assert.AreEqual(");
-            
-            #line default
-            #line hidden
-            
-            #line 44 ""
-            this.Write(this.ToStringHelper.ToStringWithCulture(propertyValue));
-            
-            #line default
-            #line hidden
-            
-            #line 44 ""
-            this.Write(", classUnderTest.");
+            this.Write(" = input;\n        \n        // Assert\n        Assert.AreEqual(expected, classUnder" +
+                    "Test.");
             
             #line default
             #line hidden
@@ -167,7 +203,7 @@ namespace Refractor.UnitTestGenerator.Properties {
             
             #line 47 ""
  
-    } // End of foreach loop 
+    } // End of PropertyTestData foreach loop 
     
             
             #line default

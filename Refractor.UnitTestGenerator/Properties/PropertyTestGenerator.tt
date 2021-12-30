@@ -3,11 +3,11 @@
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
-
 namespace <#=TestNamespace#> {
 
+    using System;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    
+
     [TestClass]
     public partial class <#=ClassName#> {
     
@@ -30,22 +30,22 @@ namespace <#=TestNamespace#> {
     }
     
     <# foreach(var propertyTestData in PropertyTestData) { 
-    
-        var propertyValue = GetTestValueForType(propertyTestData.PropertyType);
-    #>
-    
-    [TestMethod]
-    public void <#=ClassName#>_<#=propertyTestData.PropertyName#>_GetAndSet() {
+    var propertyValues = GetTestValuesForType(propertyTestData.PropertyType);  
+    foreach(var propertyValue in propertyValues) { #>
+    [DataRow(<#=propertyValue#>, <#=propertyValue#>)]
+    <# } #>
+    [DataTestMethod]
+    public void <#=ClassName#>_<#=propertyTestData.PropertyName#>_GetAndSet(<#=propertyTestData.PropertyTypeName#> input, <#=propertyTestData.PropertyTypeName#> expected) {
         
         // Act
-        classUnderTest.<#=propertyTestData.PropertyName#> = <#=propertyValue#>;
+        classUnderTest.<#=propertyTestData.PropertyName#> = input;
         
         // Assert
-        Assert.AreEqual(<#=propertyValue#>, classUnderTest.<#=propertyTestData.PropertyName#>);
+        Assert.AreEqual(expected, classUnderTest.<#=propertyTestData.PropertyName#>);
     }
     
     <# 
-    } // End of foreach loop 
+    } // End of PropertyTestData foreach loop 
     #>
     
     } // End of class <#=ClassName#>

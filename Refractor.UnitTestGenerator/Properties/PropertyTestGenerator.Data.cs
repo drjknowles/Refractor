@@ -8,7 +8,7 @@
 		/// <summary>
         /// Namespace to conatin the Unit Test Classes
         /// </summary>
-		public string TestNamespace { get; set; } = "TestNameSpace.Tests";
+		public string TestNamespace { get; set; } = "Refractor.UnitTestGenerator.Tests.Properties";
 
 		/// <summary>
         /// Name of the class being generated to contain the tests
@@ -25,29 +25,29 @@
         /// </summary>
         public List<TestData> PropertyTestData { get; set; } = new List<TestData>();
 
-        protected string GetTestValueForType(Type type)
+        protected string[] GetTestValuesForType(Type type)
         {
             if(type == typeof(string))
             {
-                return "TestString_1234";
+                return new[] { "\"TestString_1234\"" };
             }
             else if (type == typeof(int))
             {
-                return "345";
+                return new[] { "0", Int32.MaxValue.ToString(), Int32.MinValue.ToString() };
             }
             else if (type == typeof(bool))
             {
-                return "true";
+                return new[] { "true", "false" };
             }
             else if (type == typeof(float))
             {
-                return "5.9875f";
+                return new[] { "0f", float.MinValue.ToString(), float.MaxValue.ToString() };
             }
             else if (type == typeof(double))
             {
-                return "3.67890d";
+                return new[] { "3.67890d" };
             }
-            return "default";
+            return new[] { "default" };
         }
     }
 }

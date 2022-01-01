@@ -25,4 +25,7 @@
   <ItemGroup>
     <PackageReference Include="System.CodeDom" Version="6.0.0" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Refractor.Core\Refractor.Core.csproj" />
+  </ItemGroup>
 </Project>

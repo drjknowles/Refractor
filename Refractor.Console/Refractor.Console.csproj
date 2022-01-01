@@ -8,5 +8,6 @@
   <ItemGroup>
     <ProjectReference Include="..\Refractor.UnitTestGenerator\Refractor.UnitTestGenerator.csproj" />
     <ProjectReference Include="..\Refractor.DemoProject\Refractor.DemoProject.csproj" />
+    <ProjectReference Include="..\Refractor.Core\Refractor.Core.csproj" />
   </ItemGroup>
 </Project>

@@ -87,7 +87,7 @@ namespace Refractor.UnitTestGenerator.Properties {
             #line hidden
             
             #line 35 ""
-            this.Write("    [DataRow(");
+            this.Write("[DataRow(");
             
             #line default
             #line hidden
@@ -123,7 +123,7 @@ namespace Refractor.UnitTestGenerator.Properties {
             #line hidden
             
             #line 37 ""
-            this.Write("    [DataTestMethod]\n    public void ");
+            this.Write("[DataTestMethod]\n    public void ");
             
             #line default
             #line hidden

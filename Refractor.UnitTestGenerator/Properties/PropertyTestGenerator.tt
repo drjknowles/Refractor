@@ -32,9 +32,9 @@ namespace <#=TestNamespace#> {
     <# foreach(var propertyTestData in PropertyTestData) { 
     var propertyValues = GetTestValuesForType(propertyTestData.PropertyType);  
     foreach(var propertyValue in propertyValues) { #>
-    [DataRow(<#=propertyValue#>, <#=propertyValue#>)]
+[DataRow(<#=propertyValue#>, <#=propertyValue#>)]
     <# } #>
-    [DataTestMethod]
+[DataTestMethod]
     public void <#=ClassName#>_<#=propertyTestData.PropertyName#>_GetAndSet(<#=propertyTestData.PropertyTypeName#> input, <#=propertyTestData.PropertyTypeName#> expected) {
         
         // Act

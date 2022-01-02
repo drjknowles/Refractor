@@ -25,7 +25,7 @@ namespace Refractor.UnitTestGenerator.Tests.Properties {
     }
     
     [DataRow("TestString_1234", "TestString_1234")]
-        [DataTestMethod]
+    [DataTestMethod]
     public void DemoClass_PropertyGetterSetterTests_TestString_GetAndSet(String input, String expected) {
         
         // Act
@@ -38,7 +38,7 @@ namespace Refractor.UnitTestGenerator.Tests.Properties {
     [DataRow(0, 0)]
     [DataRow(2147483647, 2147483647)]
     [DataRow(-2147483648, -2147483648)]
-        [DataTestMethod]
+    [DataTestMethod]
     public void DemoClass_PropertyGetterSetterTests_TestInteger_GetAndSet(Int32 input, Int32 expected) {
         
         // Act
@@ -49,7 +49,7 @@ namespace Refractor.UnitTestGenerator.Tests.Properties {
     }
     
     [DataRow(3.67890d, 3.67890d)]
-        [DataTestMethod]
+    [DataTestMethod]
     public void DemoClass_PropertyGetterSetterTests_TestDouble_GetAndSet(Double input, Double expected) {
         
         // Act
@@ -62,7 +62,7 @@ namespace Refractor.UnitTestGenerator.Tests.Properties {
     [DataRow(0f, 0f)]
     [DataRow(-3.4028235E+38, -3.4028235E+38)]
     [DataRow(3.4028235E+38, 3.4028235E+38)]
-        [DataTestMethod]
+    [DataTestMethod]
     public void DemoClass_PropertyGetterSetterTests_TestFloat_GetAndSet(Single input, Single expected) {
         
         // Act
@@ -74,7 +74,7 @@ namespace Refractor.UnitTestGenerator.Tests.Properties {
     
     [DataRow(true, true)]
     [DataRow(false, false)]
-        [DataTestMethod]
+    [DataTestMethod]
     public void DemoClass_PropertyGetterSetterTests_TestBool_GetAndSet(Boolean input, Boolean expected) {
         
         // Act
